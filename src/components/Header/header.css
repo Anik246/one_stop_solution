@@ -3,7 +3,8 @@
     width: 100vw;
     height: 95vh;
     background-size: cover;
-    background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);    position:sticky;
+    background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%); 
+    position:sticky;
     text-align: center;
 
 }
