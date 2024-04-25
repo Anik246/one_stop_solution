@@ -1,0 +1,87 @@
+
+.stat-container {
+
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position:sticky;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.stat-content h2 {
+    font-weight: 750;
+    color: black;
+    font-size: max(3.5vw, 25px);
+
+}
+
+.stat-content p {
+    color: rgb(99, 96, 96);
+    font-size: 30px;
+    font-weight: 300;
+
+
+}
+
+.stat-element {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+
+}
+
+.stat-element .row h2 {
+
+    font-weight: 650;
+    color: rgb(67, 65, 65);
+    font-size: max(5vw, 20px);
+}
+
+.row {
+    line-height: 10px;
+}
+
+.stat-element .row p {
+
+    font-size: 30px;
+
+}
+
+.questions-icon {
+    display: flex;
+    gap: 9px;
+
+}
+
+.questions-icon svg {
+    width: 45px;
+    height: 65px;
+}
+
+.Books-icon {
+    display: flex;
+    gap: 9px;
+}
+
+.Books-icon i {
+    font-size: 35px;
+    margin-top: 17px;
+    color: rgb(73, 209, 209);
+
+}
+
+.Users-icon {
+    display: flex;
+    gap: 9px;
+}
+
+.Users-icon i {
+    font-size: 35px;
+    margin-top: 17px;
+    color: rgb(132, 132, 223);
+}

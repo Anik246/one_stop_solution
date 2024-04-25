@@ -1,0 +1,120 @@
+.upload-popup {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #00000090;
+    display: grid;
+    
+
+}
+
+.upload-popup-container {
+    place-self: center;
+    width: max(35vw, 300px);
+    color: #808080;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 50px 35px;
+    border-radius: 14px;
+    font-size: 20px;
+    animation: fadeIn 0.5s;
+    margin-top: 3cm;
+}
+
+.upload-popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(0, 0, 0);
+
+}
+.upload-popup-title h2{
+   margin-left: 6cm;
+
+}
+
+.upload-popup-title i{
+    
+    cursor: pointer;
+}
+
+
+.upload-popup-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.upload-popup-inputs input {
+    outline: none;
+    border: 1px solid #c9c9c9;
+    padding: 16px;
+    border-radius: 5px;
+    font-size: 23px;
+}
+
+.upload-popup-container button {
+    border: none;
+    padding: 16px;
+    border-radius: 4px;
+    color: white;
+    background-color: #ff9900;
+    font-size: 20px;
+    cursor: pointer;
+
+
+}
+
+.upload-popup-condition {
+    display: flex;
+    align-items:start;
+    justify-content: start;
+
+
+}
+.upload-popup-condition div {
+
+    font-size:25px;
+
+}
+.radio-group label {
+margin-left:1.5cm;
+}
+
+.radio-group input[type="radio"]{
+    transform: scale(1.5);
+    cursor: pointer;
+    
+}
+.select{
+    outline: none;
+    border: 1px solid #c9c9c9;
+    padding: 16px;
+    border-radius: 5px;
+    font-size: 23px;
+    cursor: pointer;
+    color: #808080;
+}
+.upload-pdf{
+    font-size:25px;
+}
+.upload-pdf input{
+    font-size:20px;
+    cursor: pointer;
+    
+}
+
+.upload-pdf button{
+   border: 1px solid rgb(198, 196, 196);
+   background-color:aliceblue;
+   color:#808080
+
+}
+.upload-popup p span {
+    color: #ff9900;
+    font-weight: 500;
+    cursor: pointer;
+}

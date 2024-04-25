@@ -1,0 +1,351 @@
+.library {
+    display: flex;
+    background-color: #ffffff;   
+}
+
+.sidebar {
+
+    width: 350px;
+    border: 1px solid rgb(255, 132, 0);
+    padding: 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 15cm; 
+    bottom: 3;
+    left: 0;
+    margin-left: 1.2cm;
+    margin-top: 12cm;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+    font-size: xx-large;
+    color: #303030;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    font-size: x-large;
+    text-align: left;
+    
+}
+
+.sidebar ul li {
+    cursor: pointer;
+    padding: 5px;
+    border: 2px solid #cbcbcb;
+    margin-bottom: 15px;
+    color: #696161;
+    border-radius: 12px;
+    transition: 0.4s ease;
+}
+.sidebar ul li:hover{
+    transform: scale(1);
+    cursor: pointer;
+    background-color: #579de829;
+}
+.content {
+    flex: 1;
+    padding: 10px;
+    margin-top: 22.8cm;
+    background-color: #ffffff;
+    height: 70cm;
+    text-align: center;
+}
+
+.books {
+    margin-top: 2cm;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: center;
+
+}
+
+#popular h1 {
+    color: #565252;
+    font-size: 50px;
+}
+
+.book {
+
+    padding: 9px;
+    border-radius: 30px;
+    width: 30cm;
+    transition:  0.2s ease;
+
+}
+
+#books-icon i {
+    color: #7b7977;
+    font-size: larger;
+    letter-spacing: 5px;
+}
+
+.book:hover {
+    transform: scale(1);
+    
+    cursor: pointer;
+    background-color: #579de829;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    
+}
+
+.book h3 {
+    color: #3092fa;
+    font-weight: 500;
+    font-size: x-large;
+}
+
+.book p {
+    font-size: larger;
+    color: #9ea9b5;
+}
+
+.download button {
+    background-color: #ff9900;
+    color: #000000;
+    border: none;
+    padding: 13px 13px;
+    cursor: pointer;
+    font-size: larger;
+    border-radius: 25px;
+}
+
+.download button:hover {
+    background-color: #ff7a15;
+}
+
+.search-container {
+    position: absolute;
+    top: 2.9cm;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f7fb;
+    height: 70vh;
+    width: 100vw;
+    align-items: center;
+}
+
+#title h1 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #41464ab1;
+}
+
+#title p {
+    font-size: 24px;
+    color: #9b9595;
+}
+
+.search-container div {
+
+    text-align: center;
+    width: 30cm;
+    margin-top: 60px;
+}
+
+#icon i {
+    font-size: 4cm;
+    color: #ff7a15;
+}
+
+.search-container input[type="text"] {
+    width: calc(100% - 4cm);
+    padding: 23px;
+    border: 2px solid #ad8b8b;
+    border-radius: 36px;
+    font-size: 23px;
+    outline: none;
+}
+
+.search-button,
+.clear-button {
+    position: absolute;
+    right: 16cm;
+    top: 13.7cm;
+    background-color: transparent;
+    border: none;
+    color: #000000;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    font-size: x-large;
+}
+
+.search-button:hover,
+.clear-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pagination {
+    position: absolute;
+    bottom: -60cm;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pagination button {
+    background-color: #f0f0f0;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: xx-large;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.pagination button:hover {
+    background-color: #ccc;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+@media screen and (max-width: 768px) {
+    .library {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        margin-top: 0;
+        margin-left: 0;
+        border: none;
+        border-bottom: 1px solid rgb(255, 132, 0);
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .content {
+        margin-top: 0;
+    }
+
+    .search-container {
+        top: 1cm;
+        height: auto;
+    }
+
+    .pagination {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .library {
+        padding: 10px;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .content {
+        margin-top: 10px;
+    }
+
+    .books {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .book {
+        width: 100%;
+    }
+
+    #books-icon i {
+        font-size: large;
+    }
+
+    .book h3 {
+        font-size: medium;
+    }
+
+    .book p {
+        font-size: small;
+    }
+
+    .download button {
+        padding: 10px 15px;
+        font-size: small;
+    }
+
+    .search-container {
+        padding: 10px;
+    }
+
+    #title h1 {
+        font-size: 24px;
+    }
+
+    #title p {
+        font-size: 14px;
+    }
+
+    .search-container input[type="text"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .search-button,
+    .clear-button {
+        font-size: medium;
+    }
+
+    .pagination button {
+        padding: 8px 15px;
+        font-size: medium;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .sidebar {
+        display: none; 
+    }
+
+    .content {
+        margin-top: 0;
+    }
+
+    .search-container {
+        padding: 5px;
+    }
+
+    #title h1 {
+        font-size: 20px;
+    }
+
+    #title p {
+        font-size: 12px;
+    }
+
+    .search-container input[type="text"] {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .search-button,
+    .clear-button {
+        padding: 8px;
+        font-size: small;
+    }
+
+    .pagination button {
+        padding: 6px 12px;
+        font-size: small;
+    }
+}
