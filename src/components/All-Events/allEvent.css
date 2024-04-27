@@ -4,9 +4,8 @@ body {
 }
 .event-main-container{
     display:flex;
-    align-items: center;
     justify-content: center;
-    background-color: rgba(240, 248, 255, 0.342);
+
 
 }
 .event-inner-container{
@@ -39,4 +38,11 @@ body {
 }
 .event-description p{
     font-size: x-large;
+}
+.hr-line2 hr{
+     margin-left:0cm;
+     margin-top: 2cm;
+     width: 130vh;
+     height: 2px;
+     background-color: rgba(0, 0, 0, 0.603);
 }

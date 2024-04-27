@@ -72,6 +72,7 @@
 .navbar .active {
     padding-bottom: 0px;
     border-bottom: 3px solid rgb(247, 136, 10);
+    color: #ff9900;
     
 }
 

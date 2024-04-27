@@ -35,6 +35,9 @@ function AllEvent() {
                         for building complex user interfaces.
                     </p>
                 </div>
+                <div className="hr-line2" >
+                    <hr/>
+                </div>
             </div>
 
         </div>
