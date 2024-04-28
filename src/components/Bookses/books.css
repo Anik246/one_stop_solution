@@ -10,10 +10,10 @@
     padding: 30px;
     border-radius: 10px;
     position: absolute;
-    top: 15cm; 
+    top: 4.7cm; 
     bottom: 3;
     left: 0;
-    margin-left: 1.2cm;
+    margin-left: 43cm;
     margin-top: 12cm;
 }
 
@@ -48,19 +48,22 @@
 .content {
     flex: 1;
     padding: 10px;
-    margin-top: 22.8cm;
-    background-color: #ffffff;
-    height: 70cm;
+    margin-top: 11.5cm;
+    
+    height: 120cm;
     text-align: center;
 }
 
 .books {
     margin-top: 2cm;
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 50px;
+    column-gap: 0cm;
     align-items: center;
+    width: 130vh;
+    margin-left: 2.5cm;
+    
 
 }
 
@@ -71,13 +74,27 @@
 
 .book {
 
-    padding: 9px;
-    border-radius: 30px;
-    width: 30cm;
+    padding: 50px;
+    border-radius: 10px;
+    width: 35cm;
+    height: 7cm;
     transition:  0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.191);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1cm;
+
 
 }
-
+.book-details-download{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60cm;
+    margin-right: -1.35cm;
+}
 #books-icon i {
     color: #7b7977;
     font-size: larger;
@@ -86,47 +103,59 @@
 
 .book:hover {
     transform: scale(1);
-    
     cursor: pointer;
     background-color: #579de829;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     
 }
+.book-photo{
+    margin-left: -1.3cm;
+    width: 24cm;
+    height: 9.7cm;
+    background-color: #4c4c4c0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.book-photo img {
+   width: 7.5cm;
+   border-radius: 5px;
+}
 
 .book h3 {
-    color: #3092fa;
+    color: #000000a5;
     font-weight: 500;
-    font-size: x-large;
+    font-size: 40px;
 }
 
 .book p {
-    font-size: larger;
+    font-size: 30px;
     color: #9ea9b5;
 }
 
 .download button {
-    background-color: #ff9900;
+   
     color: #000000;
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.214);
     padding: 13px 13px;
     cursor: pointer;
     font-size: larger;
-    border-radius: 25px;
+    border-radius: 20px;
 }
 
-.download button:hover {
-    background-color: #ff7a15;
+.down-button:hover {
+    background-color:#ff7a15
 }
 
 .search-container {
     position: absolute;
-    top: 2.9cm;
     display: flex;
-    flex-direction: column;
-    background-color: #f6f7fb;
-    height: 70vh;
-    width: 100vw;
     align-items: center;
+    flex-direction: column;
+    background-color: hsl(228, 38%, 97%);
+    height: 40vh;
+    width: 100vw;
+    justify-content: center;
 }
 
 #title h1 {
@@ -141,7 +170,7 @@
 }
 
 .search-container div {
-
+    
     text-align: center;
     width: 30cm;
     margin-top: 60px;
@@ -159,13 +188,14 @@
     border-radius: 36px;
     font-size: 23px;
     outline: none;
+    margin-top: -3cm;
 }
 
 .search-button,
 .clear-button {
     position: absolute;
     right: 16cm;
-    top: 13.7cm;
+    top: 8.5cm;
     background-color: transparent;
     border: none;
     color: #000000;
@@ -182,7 +212,7 @@
 
 .pagination {
     position: absolute;
-    bottom: -60cm;
+    margin-top: 70px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -199,7 +229,7 @@
 }
 
 .pagination button:hover {
-    background-color: #ccc;
+    background-color: rgb(228, 112, 35);
 }
 
 .pagination button:disabled {
@@ -234,11 +264,8 @@
     }
 
     .pagination {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
-        margin-top: 20px;
+        position: absolute;
+        margin-bottom: 30cm;
     }
 }
 

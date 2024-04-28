@@ -27,12 +27,7 @@ function AllEvent() {
                         developers focus on crafting the user interface (UI) and user <br />
                         experience (UX) through HTML, CSS, and JavaScript.
                         HTML provides the structure of web pages, CSS styles them <br />
-                        and JavaScript adds interactive elements and dynamic behavior <br />
-                        to enhance user engagement. Modern front-end frameworks such <br />
-                        as React, Angular, or Vue.js
-                        streamline development by providing <br />
-                        powerful tools and reusable components <br />
-                        for building complex user interfaces.
+                      
                     </p>
                 </div>
                 <div className="hr-line2" >

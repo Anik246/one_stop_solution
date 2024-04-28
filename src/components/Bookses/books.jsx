@@ -3,9 +3,9 @@ import './books.css';
 
 const booksData =
     [
-        { id: 1, title: 'Artificial Intelligence - A Modern Approach', author: 'Stuart Russell; Peter Norvig', category: 'AI' },
-        { id: 2, title: 'Data Structures and Algorithms',author: 'Michael T. Goodrich; Roberto Tamassia; Michael H. Goldwasser', category: 'AI' },
-        { id: 3, title: 'Systems Analysis and Design', author: 'Alan Dennis; Barbara Haley Wixom; Roberta M. Roth', category: 'System' },
+        { id: 1, photo:"src/components/Bookses/512TXbMBR4L._SL500_.jpg", title: 'Artificial Intelligence - A Modern Approach', author: 'Stuart Russell; Peter Norvig', category: 'AI' },
+        { id: 2, photo:"src/components/Bookses/512TXbMBR4L._SL500_.jpg", title: 'Data Structures and Algorithms',author: 'Michael T. Goodrich; Roberto Tamassia; Michael H. Goldwasser', category: 'AI' },
+        { id: 3,  photo:"src/components/Bookses/512TXbMBR4L._SL500_.jpg", title: 'Systems Analysis and Design', author: 'Alan Dennis; Barbara Haley Wixom; Roberta M. Roth', category: 'System' },
         { id: 4, title: 'Computer Networks: A Top-Down Approach', author: 'James F. Kurose; Keith W. Ross', category: 'System' },
         { id: 5, title: 'Artificial Intelligence - A Modern Approach', author: 'Stuart Russell; Peter Norvig', category: 'AI' },
         { id: 6, title: 'Data Structures and Algorithms', author: 'Michael T. Goodrich; Roberto Tamassia; Michael H. Goldwasser', category: 'AI' },
@@ -38,12 +38,18 @@ const booksData =
 function Book({ book }) {
     return (
         <div className="book">
-            <h3 id='books-icon'>
-                <i class="fa-solid fa-book"></i> {book.title}</h3>
+            <div className='book-photo'>
+                 <img src={book.photo} alt="" />
+            </div>
+            <div className='book-details-download'>
+              <div>
+                </div>  <h3 id='books-icon'> {book.title}</h3>
             <p>{book.author}</p>
             <div className="download">
-                <button>Download</button>
+                <button className='down-button'> Download</button>
             </div>
+            </div>
+            
         </div>
     );
 }
@@ -97,9 +103,7 @@ function Books() {
         <div className="library">
 
             <div className="search-container">
-                <div id='icon'>
-                    <i class="fa-solid fa-book"></i>
-                </div>
+               
                 <div id='title'>
                     <h1>Which book do you need study materials for?</h1>
                     <p>Search for a book and find study material about it</p>
@@ -151,15 +155,15 @@ function Books() {
                     </ul>
                 </div>
                 <div className="pagination">
-                    <button onClick={handlePrevPage} disabled={currentPage === 1}>
-                        Prev
+                     <button onClick={handlePrevPage} disabled={currentPage === 1}>
+                    <i class="fa-solid fa-arrow-left"></i>
                     </button>
-                    <span>Page {currentPage}</span>
+                    <span className="page-number">{currentPage}</span>
                     <button
                         onClick={handleNextPage}
                         disabled={currentPage === totalPages}
                     >
-                        Next
+                        <i class="fa-sharp fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
             </div>

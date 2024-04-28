@@ -37,7 +37,8 @@ body {
     height: 30vw;
 }
 .event-description p{
-    font-size: x-large;
+    font-size: 30px;
+    color:rgb(120, 122, 124);
 }
 .hr-line2 hr{
      margin-left:0cm;
