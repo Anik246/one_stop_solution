@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Toaster, toast } from 'sonner';
 import "./uploadpopup.css";
 
 function UploadPopUp({ setShowPopUp: setShowPopUp }) {
@@ -8,12 +9,13 @@ function UploadPopUp({ setShowPopUp: setShowPopUp }) {
         e.preventDefault();
 
         const formData = new FormData();
-        formData.append("course", "ai");
-        formData.append("code", "ai");
-        formData.append("type", "mid");
-        formData.append("trimester", "fall");
-        formData.append("year", 2023);
-        formData.append("department", "cse");
+
+        formData.append("course", e.target.course.value);
+        formData.append("code", e.target.code.value);
+        formData.append("type", e.target.type.value);
+        formData.append("trimester", e.target.trimester.value);
+        formData.append("year", e.target.year.value);
+        formData.append("department", e.target.department.value);
         formData.append("pdfFile", pdfFile);
   
         try {
@@ -24,8 +26,22 @@ function UploadPopUp({ setShowPopUp: setShowPopUp }) {
               body: formData,
             }
           );
-          const data = await response.text();
-          console.log(data);
+          if (response.status === 200) {
+            toast.success("Thanks For your Contribution. Got 5Cr.");
+
+          } else if (response.status === 406) {
+            toast.error("Question Already Exist");
+
+          } else if(response.status === 413) {
+            toast.error("File size too large");
+
+          } else{
+            toast.error("Something went wrong. file not uploaded");
+          }
+
+          setTimeout(() => {
+           setShowPopUp(false)
+          }, 2500);
           
         } catch (error) {
           console.log(error);
@@ -34,6 +50,8 @@ function UploadPopUp({ setShowPopUp: setShowPopUp }) {
     
 
     return (
+        <>
+        <Toaster richColors position="top-center"/>
         <div className="upload-popup">
             <form onSubmit={handleSubmit} encType="multipart/form-data"  className="upload-popup-container">
                 <div className="upload-popup-title">
@@ -93,6 +111,7 @@ function UploadPopUp({ setShowPopUp: setShowPopUp }) {
             </form>
 
         </div>
+        </>
     )
 
 }
