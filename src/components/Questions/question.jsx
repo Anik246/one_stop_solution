@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./question.css";
+import { Link } from "react-router-dom";
 const questionsData = [
     { id: 1, urL: "src/components/Questions/Final_CSE_4325_Fall23 (15).pdf", title: 'Artificial Intelligence', Trimester: 'Fall', Year: '2023', type: "MID" },
     { id: 2, urL: 'src/components/Download/Final_CSE_4325_Fall24.pdf', title: 'Data Structures and Algorithms', Trimester: 'Spring', Year: '2023', type: "Final" },
@@ -33,31 +34,32 @@ const questionsData = [
     { id: 30, title: 'Computer Ethics', Trimester: 'Summer', Year: '2023', type: "CT" }
 ];
 //download question
-const handleDownload = (pdfUrl) => {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', pdfUrl, true);
-    xhr.responseType = 'blob';
+// const handleDownload = (pdfUrl) => {
+//     const xhr = new XMLHttpRequest();
+//     xhr.open('GET', pdfUrl, true);
+//     xhr.responseType = 'blob';
 
-    xhr.onload = () => {
-        const blob = new Blob([xhr.response], { type: 'application/pdf' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = pdfUrl.substring(pdfUrl.lastIndexOf('/') + 1);
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
-    };
+//     xhr.onload = () => {
+//         const blob = new Blob([xhr.response], { type: 'application/pdf' });
+//         const url = window.URL.createObjectURL(blob);
+//         const a = document.createElement('a');
+//         a.href = url;
+//         a.download = pdfUrl.substring(pdfUrl.lastIndexOf('/') + 1);
+//         document.body.appendChild(a);
+//         a.click();
+//         window.URL.revokeObjectURL(url);
+//     };
 
-    xhr.send();
-};
+//     xhr.send();
+// };
 
 
 function Book({ book: questionPaper }) {
     const pdfUrl = questionPaper.urL;
 
     return (
-        <div onClick={() => handleDownload(pdfUrl)} className="question-details">
+        <Link to= "http://localhost:5000/uploads/qbs/ai-mid-2023-cse-1714376411775.pdf">
+        <div className="question-details">
             <div className="question-course">
                 <h3 id='question-icon'>
                     <i className="fa-solid fa-file-pdf"></i> {questionPaper.title}
@@ -73,6 +75,7 @@ function Book({ book: questionPaper }) {
                 <i class="fa-solid fa-download"></i>
             </div>
         </div>
+        </Link>
     );
 }
 

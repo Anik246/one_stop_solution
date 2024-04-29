@@ -2,41 +2,40 @@ import React, { useState } from "react";
 import "./uploadpopup.css";
 
 function UploadPopUp({ setShowPopUp: setShowPopUp }) {
-    const [selectedFile, setSelectedFile] = useState(null);
+    const [pdfFile, setPdfFile] = useState(null);
 
-    const handleFileChange = (event) => {
-        setSelectedFile(event.target.files[0]);
-    };
+    async function handleSubmit(e) {
+        e.preventDefault();
 
-    const handleUpload = () => {
-        // Here you can perform the upload logic, like sending the file to a server
-        if (selectedFile) {
-            console.log("Uploading file:", selectedFile);
-            // Example: You can use FormData to upload the file via fetch or Axios
-            const formData = new FormData();
-            formData.append('file', selectedFile);
-
-            // Example: Upload using fetch
-            fetch('YOUR_UPLOAD_URL', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Upload successful', data);
-                    // Handle success response
-                })
-                .catch(error => {
-                    console.error('Error uploading file', error);
-                    // Handle error
-                });
+        const formData = new FormData();
+        formData.append("course", "ai");
+        formData.append("code", "ai");
+        formData.append("type", "mid");
+        formData.append("trimester", "fall");
+        formData.append("year", 2023);
+        formData.append("department", "cse");
+        formData.append("pdfFile", pdfFile);
+  
+        try {
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/qb/upload`,
+            {
+              method: "POST",
+              body: formData,
+            }
+          );
+          const data = await response.text();
+          console.log(data);
+          
+        } catch (error) {
+          console.log(error);
         }
-    };
-
+      }
+    
 
     return (
         <div className="upload-popup">
-            <form action="/qb/upload" method="post" enctype="multipart/form-data" className="upload-popup-container">
+            <form onSubmit={handleSubmit} encType="multipart/form-data"  className="upload-popup-container">
                 <div className="upload-popup-title">
                     <h2>Upload Questions Paper</h2>
                     <i onClick={() => setShowPopUp(false)} class="fa-solid fa-x"></i>
@@ -47,10 +46,10 @@ function UploadPopUp({ setShowPopUp: setShowPopUp }) {
                 </div>
                 <div className="upload-popup-condition">
                     <div>
-                        Trimister:
+                        Trimester:
                     </div>
                     <div className="radio-group">
-                        <label for="fall"><input type="radio" id="fall" name="trimester" value="fall" /> Fall</label>
+                        <label for="fall"><input type="radio" id="fall" name="trimester" value="fall" required /> Fall</label>
                         <label for="summer"><input type="radio" id="summer" name="trimester" value="summer" /> Summer</label>
                         <label for="spring"><input type="radio" id="spring" name="trimester" value="spring" /> Spring</label>
                     </div>
@@ -61,7 +60,7 @@ function UploadPopUp({ setShowPopUp: setShowPopUp }) {
                         Type:
                     </div>
                     <div className="radio-group">
-                        <label for="ct"><input type="radio" id="ct" name="type" value="ct" /> CT</label>
+                        <label for="ct"><input type="radio" id="ct" name="type" value="ct" required/> CT</label>
                         <label for="mid"><input type="radio" id="mid" name="type" value="mid" /> MID</label>
                         <label for="final"><input type="radio" id="final" name="type" value="final" /> Final</label>
                         <label for="solution" ><input type="radio" id="solution" name="type" value="solution" /> Solution</label>
@@ -84,11 +83,11 @@ function UploadPopUp({ setShowPopUp: setShowPopUp }) {
                 </div>
                 <div className="upload-pdf">
                     <p>Upload Pdf File:</p>
-                    <input type="file" onChange={handleFileChange} />
+                    <input name="pdfFile" onChange={(e)=> setPdfFile(e.target.files[0]) } type="file" accept="application/pdf" required />
                 </div>
                 <div className="upload-popup-inputs">
 
-                    <button onClick={handleUpload}>Submit</button>
+                    <button>Submit</button>
 
                 </div>
             </form>
